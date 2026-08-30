@@ -1,17 +1,19 @@
 [gd_scene format=3 uid="uid://dqur6vr3ik7nm"]
 
-[ext_resource type="Texture2D" uid="uid://kxdi3sc1nc1p" path="res://art/life/castledoors.png" id="1_ba8gm"]
 [ext_resource type="Script" uid="uid://d22omtjm7fip3" path="res://door.gd" id="1_v6xrn"]
+[ext_resource type="Texture2D" uid="uid://cxbcni1y02g7w" path="res://art/life/door_closed_bg.png" id="2_v6xrn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v6xrn"]
-size = Vector2(66, 82)
+size = Vector2(95, 98)
 
 [node name="Door" type="Area2D" unique_id=1023947291]
 script = ExtResource("1_v6xrn")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=5649375]
-texture = ExtResource("1_ba8gm")
+position = Vector2(-2.0000076, 1)
+scale = Vector2(0.41949153, 0.48728815)
+texture = ExtResource("2_v6xrn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=100534489]
-position = Vector2(0, 7)
+position = Vector2(-1.5, 2)
 shape = SubResource("RectangleShape2D_v6xrn")
