@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c8a8wxjfdgpn3"]
+
+[ext_resource type="Script" uid="uid://c5mwm605on67x" path="res://money_bag.gd" id="1_q2q65"]
+[ext_resource type="Texture2D" uid="uid://cscyji0j22jur" path="res://art/life/money_bag.png" id="2_gswsu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ko2q"]
+
+[node name="MoneyBag" type="Area2D" unique_id=737238218]
+script = ExtResource("1_q2q65")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1712367695]
+texture = ExtResource("2_gswsu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=551171203]
+shape = SubResource("RectangleShape2D_6ko2q")
