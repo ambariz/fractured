@@ -6,7 +6,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_guytr"]
 size = Vector2(9, 48)
 
-[node name="Gate" type="Area2D" unique_id=501446336]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikl61"]
+size = Vector2(179, 52)
+
+[node name="Gate" type="StaticBody2D" unique_id=1138639955]
 script = ExtResource("1_ikl61")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=252030551]
@@ -16,3 +19,9 @@ texture = ExtResource("2_5lukw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=873887285]
 position = Vector2(-3.5, 0)
 shape = SubResource("RectangleShape2D_guytr")
+
+[node name="Detector" type="Area2D" parent="." unique_id=1862825144]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector" unique_id=1551425500]
+position = Vector2(-60.5, 0)
+shape = SubResource("RectangleShape2D_ikl61")
