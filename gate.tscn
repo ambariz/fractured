@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dwmeaswqi5xhe" path="res://art/life/gate.png" id="2_5lukw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_guytr"]
-size = Vector2(9, 48)
+size = Vector2(10, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ikl61"]
 size = Vector2(179, 52)
@@ -17,11 +17,11 @@ rotation = 1.5707964
 texture = ExtResource("2_5lukw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=873887285]
-position = Vector2(-3.5, 0)
+position = Vector2(-3, 0)
 shape = SubResource("RectangleShape2D_guytr")
 
 [node name="Detector" type="Area2D" parent="." unique_id=1862825144]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector" unique_id=1551425500]
-position = Vector2(-60.5, 0)
+position = Vector2(-60, 3)
 shape = SubResource("RectangleShape2D_ikl61")
