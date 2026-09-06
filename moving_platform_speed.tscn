@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cult720chm5eb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6816"]
+
+[node name="MovingPlatformSpeed" type="AnimatedSprite2D" unique_id=573433837]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=748819241]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1458126790]
+shape = SubResource("RectangleShape2D_o6816")

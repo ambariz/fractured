@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://du8n2akmyghg4"]
+
+[ext_resource type="Texture2D" uid="uid://bgpvy8gaa2hr8" path="res://art/life/moving_solid_platform.png" id="1_4lrg4"]
+[ext_resource type="Script" uid="uid://dj8m7emqcwr71" path="res://moving_platform_brick.gd" id="1_8jr4l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oddfg"]
+size = Vector2(46, 16)
+
+[node name="MovingPlatformBrick" type="AnimatableBody2D" unique_id=1616428638]
+script = ExtResource("1_8jr4l")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1134936599]
+position = Vector2(-8.940697e-07, -9)
+scale = Vector2(0.9583333, 0.99999994)
+texture = ExtResource("1_4lrg4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1649403302]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_oddfg")

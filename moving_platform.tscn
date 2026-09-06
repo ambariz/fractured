@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cjehqgxh28uvs"]
+
+[ext_resource type="Script" uid="uid://b8v1h8sx6e6il" path="res://moving_platform.gd" id="1_hrpga"]
+[ext_resource type="Texture2D" uid="uid://dwmeaswqi5xhe" path="res://art/life/gate.png" id="1_q06lf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1b7n"]
+size = Vector2(52, 12)
+
+[node name="MovingPlatform" type="AnimatableBody2D" unique_id=1829572869]
+script = ExtResource("1_hrpga")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=515338120]
+position = Vector2(17, 1.5)
+rotation = 3.1415927
+scale = Vector2(1.125, 1.4375)
+texture = ExtResource("1_q06lf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1714795402]
+position = Vector2(17, -4)
+shape = SubResource("RectangleShape2D_k1b7n")
