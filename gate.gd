@@ -30,7 +30,8 @@ func _on_detector_body_entered(body: Node2D) -> void:
 		open_gate()
 	else:
 		if gate_message:
-			gate_message.text = "You need %d bag%s to open this gate!" % [required, "s" if required > 1 else ""]
+			gate_message.text = "You need %d %sbag%s to open this gate!" % [
+				1 if (3*GameManager.gates_opened) == 0 else (3*GameManager.gates_opened) - GameManager.money_collected,"" if required == 1 else "more ","s" if required > 1 else ""]
 			gate_message.show()
 
 
