@@ -1,7 +1,6 @@
 extends StaticBody2D
 
 var opened := false
-
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var collision: CollisionShape2D = $CollisionShape2D
 
@@ -30,8 +29,12 @@ func _on_detector_body_entered(body: Node2D) -> void:
 		open_gate()
 	else:
 		if gate_message:
-			gate_message.text = "You need %d %sbag%s to open this gate!" % [
-				1 if (3*GameManager.gates_opened) == 0 else (3*GameManager.gates_opened) - GameManager.money_collected,"" if required == 1 else "more ","s" if required > 1 else ""]
+			var needed: int = required - GameManager.money
+			
+			gate_message.text = "You need %d more bag%s to open this gate!" % [
+				needed,
+				"" if needed == 1 else "s"
+			]
 			gate_message.show()
 
 

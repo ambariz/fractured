@@ -1,10 +1,10 @@
 extends Node
 
 var keys_collected := 0
-var total_keys := 4
+var total_keys := 12
 var money := 0
 var money_collected := 0
-var money_total := 20
+var money_total := 28
 var gates_opened := 0
 
 func add_key() -> void:
