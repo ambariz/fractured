@@ -1,7 +1,7 @@
 extends Node
 
 var keys_collected := 0
-var total_keys := 2
+var total_keys := 13
 var money := 0
 var money_collected := 0
 var money_total := 28
