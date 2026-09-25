@@ -72,15 +72,16 @@ func open_door() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if not opened:
-		return
-
 	if event is InputEventKey:
-		
 		if event.pressed and not event.echo:
-		
-			if event.keycode == KEY_R or event.keycode == KEY_X:
-	
+
+			if event.keycode == KEY_X:
+				var key_message = get_tree().get_first_node_in_group("key_complete_message")
+
+				if key_message:
+					key_message.hide()
+
+			if opened and event.keycode == KEY_R:
 				GameManager.new_game()
 				get_tree().paused = false
 				get_tree().reload_current_scene()

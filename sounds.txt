@@ -1,0 +1,14 @@
+sound for
+
+jump
+gate locked (while text showing)
+gate open
+
+key collection
+all key collected
+
+door unlock 
+door open
+victory
+background mucic
+after winning music

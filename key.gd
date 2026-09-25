@@ -12,8 +12,13 @@ func _on_body_entered(body:Node2D) -> void:
 			var ending_message = get_tree().get_first_node_in_group("ending_message")
 			
 			if ending_message:
-				ending_message.text = "All keys collected!\nNow find the door!\n\nPress X to continue"
+				ending_message.text = "All keys collected!\nNow find the door!\n\n"
 				ending_message.show()
+
+				await get_tree().create_timer(4.0).timeout
+
+				if ending_message:
+					ending_message. hide()
 		
 		print("KEY TOUCHED BY : ",body.name)
 		queue_free()

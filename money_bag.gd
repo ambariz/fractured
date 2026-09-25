@@ -7,4 +7,5 @@ func _on_body_entered(body:Node2D) -> void:
 	if body.name == "Player":
 		GameManager.add_money()
 		GameManager.money_collected += 1
+		AudioManager.play_sfx(("coin"))
 		queue_free()
