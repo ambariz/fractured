@@ -5,6 +5,8 @@ extends CharacterBody2D
 @export var gravity := 1200.0
 @export var deceleration := 1500.0
 
+var was_on_floor := false
+
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -20,3 +22,8 @@ func _physics_process(delta):
 		velocity.y = -jump_force
 
 	move_and_slide()
+	
+	if is_on_floor() and not was_on_floor:
+		AudioManager.play_sfx(("jump"))
+
+	was_on_floor = is_on_floor()

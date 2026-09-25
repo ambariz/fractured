@@ -4,24 +4,25 @@ func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 
 func _on_body_entered(body:Node2D) -> void:
-	if body.name == "Player":
-		GameManager.add_key()
-
-		if GameManager.keys_collected == GameManager.total_keys:
-			
-			var ending_message = get_tree().get_first_node_in_group("ending_message")
-			
-			if ending_message:
-				ending_message.text = "All keys collected!\nNow find the door!\n\n"
-				ending_message.show()
-
-				await get_tree().create_timer(4.0).timeout
-
-				if ending_message:
-					ending_message. hide()
+	if body.name != "Player":
+		return
 		
-		print("KEY TOUCHED BY : ",body.name)
-		queue_free()
+	GameManager.add_key()
+	AudioManager.play_sfx(("key"))
+	queue_free()
+	
+	if GameManager.keys_collected == GameManager.total_keys:
+		
+		var ending_message = get_tree().get_first_node_in_group("ending_message")
+		
+		if ending_message:
+			ending_message.text = "All keys collected!\nNow find the door!\n\nPress X to close!"
+			ending_message.show()
+			AudioManager.play_text()
+			await get_tree().create_timer(3.0).timeout
+	
+	print("KEY TOUCHED BY : ",body.name)
+		
 		
 func _input(event: InputEvent) -> void:
 	

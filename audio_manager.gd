@@ -21,8 +21,8 @@ var sfx_tracks := {
 	"text": preload("res://sounds/text.mp3")
 }
 
-
 func _ready() -> void:
+	
 	bgm_player = AudioStreamPlayer.new()
 	bgm_player.name = "BGM"
 	bgm_player.bus = "Master"
@@ -40,13 +40,17 @@ func _ready() -> void:
 	text_player.bus = "Master"
 	text_player.process_mode = Node.PROCESS_MODE_ALWAYS
 	add_child(text_player)
+	
+	for track in bgm_tracks.values():
+		if track is AudioStreamMP3:
+			track.loop = true
 
 	play_bgm("normal")
 
 func play_bgm(track:String) -> void:
 	if not bgm_tracks.has(track):
 		return
-	if current_bgm == track and bgm_player[track]:
+	if current_bgm == track and bgm_player.playing:
 		return
 	current_bgm = track
 	bgm_player.stream = bgm_tracks[track]

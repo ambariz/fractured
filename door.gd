@@ -32,6 +32,7 @@ func _on_body_entered(body: Node2D) -> void:
 		if gate_message:
 			gate_message.text = "You need %d more key%s!" % [remaining,"" if remaining == 1 else "s"]
 			gate_message.show()
+			AudioManager.play_text()
 
 
 func _on_body_exited(body: Node2D) -> void:
@@ -49,7 +50,7 @@ func open_door() -> void:
 		return
 
 	opened = true
-
+	AudioManager.play_sfx(("door"))
 	sprite.texture = half_texture
 
 	await get_tree().create_timer(0.5).timeout
@@ -67,6 +68,7 @@ func open_door() -> void:
 	if ending_message:
 		ending_message.text = "YOU WON!\n\nYou cleared the Level Yaaaaayyy!\n\nPress R to play again"
 		ending_message.show()
+		AudioManager.play_text()
 
 	get_tree().paused = true
 

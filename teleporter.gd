@@ -18,6 +18,8 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 
 	teleporting = true
+	
+	AudioManager.play_sfx(("portal"))
 
 	body.global_position = Vector2(teleport_x, teleport_y)
 	body.velocity = Vector2.ZERO

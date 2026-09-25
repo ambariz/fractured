@@ -1,14 +1,9 @@
-sound for
 
-jump
-gate locked (while text showing)
-gate open
+one problem:
+	
+	after collecting the last key text is showing if we press x then
+	it's going but key is still there and it hides after some time
+	if player catches it then the key value is added +1 which is
+	+2 per key.. which is wrong
 
-key collection
-all key collected
-
-door unlock 
-door open
-victory
-background mucic
-after winning music
+this is solved

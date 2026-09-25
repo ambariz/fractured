@@ -36,6 +36,7 @@ func _on_detector_body_entered(body: Node2D) -> void:
 				"" if needed == 1 else "s"
 			]
 			gate_message.show()
+			AudioManager.play_text()
 
 
 func _on_detector_body_exited(body: Node2D) -> void:
